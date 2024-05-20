@@ -21,6 +21,6 @@ public class Voo
     public int PilotId { get; set; }
     public Aircraft Aircraft { get; set; } = null!;
     public Pilot Pilot { get; set; } = null!;
-    public Cancellation? cancellation{ get; set; }
+    public Cancellation? Cancellation { get; set; }
 
 }

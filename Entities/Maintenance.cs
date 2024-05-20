@@ -1,4 +1,5 @@
 using AirlinesControl.Entities.Enums;
+
 namespace AirlinesControl.Entities;
 
 public class Maintenance

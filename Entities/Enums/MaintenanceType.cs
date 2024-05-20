@@ -1,4 +1,4 @@
-namespace AirlinesControl.Entities.Enums
+namespace AirlinesControl.Entities.Enums;
 
 public enum MaintenanceType
 {
