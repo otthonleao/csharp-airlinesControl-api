@@ -2,7 +2,7 @@ namespace AirlinesControl.Entities;
 
 public class Aircraft
 {
-    public Aeronave(string fabricante, string modelo, string codigo)
+    public Aircraft(string fabricante, string modelo, string codigo)
     {
         Fabricante = fabricante;
         Modelo = modelo;

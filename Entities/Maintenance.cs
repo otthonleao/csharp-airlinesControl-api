@@ -1,4 +1,4 @@
-using AirlinesControl.Entities.Enums
+using AirlinesControl.Entities.Enums;
 namespace AirlinesControl.Entities;
 
 public class Maintenance
@@ -11,7 +11,7 @@ public class Maintenance
         AircraftId = aircraftId;
     }
     public int Id { get; set; }
-    public dateTime DataHora{ get; set;}
+    public DateTime DataHora{ get; set;}
     public string? Observacoes { get; set; }
     public MaintenanceType Tipo { get; set; }
     public int AircraftId { get; set; } 

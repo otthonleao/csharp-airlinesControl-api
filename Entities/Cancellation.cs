@@ -1,8 +1,8 @@
-namespace AirlinesControl.Entities
+namespace AirlinesControl.Entities;
 
 public class Cancellation
 {
-    public Cancellation(string motivo, DateTime dataHoraNotificacao, int VooId)
+    public Cancellation(string motivo, DateTime dataHoraNotificacao, int vooId)
     {
         Motivo = motivo;
         DataHoraNotificacao = dataHoraNotificacao;
