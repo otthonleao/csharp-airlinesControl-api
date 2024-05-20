@@ -13,5 +13,5 @@ public class Aircraft
     public string Modelo { get; set; }
     public string Codigo { get; set; }
     public ICollection<Maintenance> Maintenances { get; set;} = null!;
-    public ICollection<Voo> Voos { get; set;} = null!;
+    public ICollection<Flight> Voos { get; set;} = null!;
 }
