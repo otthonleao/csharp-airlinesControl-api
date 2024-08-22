@@ -46,4 +46,11 @@ public class AeronaveController(AeronaveService aeronaveService) : ControllerBas
         var aeronave = _aeronaveService.AtualizarAeronave(dados);
         return Ok(aeronave);
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult ExcluirAeronave(int id)
+    {
+        _aeronaveService.ExcluirAeronave(id);
+        return NoContent();
+    }
 }
