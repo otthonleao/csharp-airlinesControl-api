@@ -46,5 +46,27 @@ namespace AirlinesControl.Services
 
         return null;
     }
+        public DetalharAeronaveViewModel? AtualizarAeronave(AtualizarAeronaveViewModel dados)
+    {
+
+        var aeronave = _context.Aeronaves.Find(dados.Id);
+
+        if (aeronave != null)
+        {
+            aeronave.Fabricante = dados.Fabricante;
+            aeronave.Modelo = dados.Modelo;
+            aeronave.Codigo = dados.Codigo;
+
+            _context.Update(aeronave);
+            _context.SaveChanges();
+
+            return new DetalharAeronaveViewModel(aeronave.Id, aeronave.Fabricante, aeronave.Modelo, aeronave.Codigo);
+        }
+
+        return null;
     }
+
+
+    }
+    
 }

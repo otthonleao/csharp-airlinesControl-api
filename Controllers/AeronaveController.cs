@@ -29,11 +29,21 @@ public class AeronaveController(AeronaveService aeronaveService) : ControllerBas
     {
         var aeronave = _aeronaveService.ListarAeronavePeloId(id);
 
-        if(aeronave != null)
+        if (aeronave != null)
         {
             return Ok(aeronave);
         }
 
         return NotFound();
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult AtualizarAeronave(int id, AtualizarAeronaveViewModel dados)
+    {
+        if (id != dados.Id)
+            return BadRequest("O id informado na URL é diferente do id informado no corpo da requisição.");
+
+        var aeronave = _aeronaveService.AtualizarAeronave(dados);
+        return Ok(aeronave);
     }
 }
