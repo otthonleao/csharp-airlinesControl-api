@@ -17,4 +17,23 @@ public class AeronaveController(AeronaveService aeronaveService) : ControllerBas
         var aeronave = _aeronaveService.AdicionarAeronave(dados);
         return Ok(aeronave);
     }
+
+    [HttpGet]
+    public IActionResult ListarAeronaves()
+    {
+        return Ok(_aeronaveService.ListarAeronaves());
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult ListarAeronavePeloId(int id)
+    {
+        var aeronave = _aeronaveService.ListarAeronavePeloId(id);
+
+        if(aeronave != null)
+        {
+            return Ok(aeronave);
+        }
+
+        return NotFound();
+    }
 }
