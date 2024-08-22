@@ -1,14 +1,15 @@
 namespace AirlinesControl.Entities;
 
-public class Pilot
+public class Piloto
 {
-    public Pilot(string nome, string matricula)
+    public Piloto(string nome, string matricula)
     {
         Nome = nome;
         Matricula = matricula;
     }
+
     public int Id { get; set; }
-    public string Nome { get; set;}
+    public string Nome { get; set; }
     public string Matricula { get; set; }
-    public ICollection<Flight> Voos { get; set;} = null!;
+    public ICollection<Voo> Voos { get; set; } = null!;
 }

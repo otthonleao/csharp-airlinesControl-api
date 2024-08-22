@@ -7,29 +7,29 @@ namespace AirlinesControl.Contexts;
 public class AirlinesControlContext: DbContext
 {
     private readonly IConfiguration _configuration;
-        
+
     public AirlinesControlContext(IConfiguration configuration)
     {
         _configuration = configuration;
     }
 
-    public DbSet<Aircraft> Aircrafts => Set<Aircraft>();
-    public DbSet<Pilot> Pilots => Set<Pilot>();
-    public DbSet<Flight> Voos => Set<Flight>();
-    public DbSet<Cancellation> Cancellations => Set<Cancellation>();
-    public DbSet<Maintenance> Maintenances => Set<Maintenance>();
-    
+    public DbSet<Aeronave> Aeronaves => Set<Aeronave>();
+    public DbSet<Piloto> Pilotos => Set<Piloto>();
+    public DbSet<Voo> Voos => Set<Voo>();
+    public DbSet<Cancelamento> Cancelamentos => Set<Cancelamento>();
+    public DbSet<Manutencao> Manutencoes => Set<Manutencao>();
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("AirlinesControl"));
+        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("CiaAerea"));
     }
-
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new AircraftConfiguration());
-        modelBuilder.ApplyConfiguration(new PilotConfiguration());
-        modelBuilder.ApplyConfiguration(new FlightConfiguration());
-        modelBuilder.ApplyConfiguration(new CancellationConfiguration());
-        modelBuilder.ApplyConfiguration(new MaintenanceConfiguration());
+        modelBuilder.ApplyConfiguration(new AeronaveConfiguration());
+        modelBuilder.ApplyConfiguration(new PilotoConfiguration());
+        modelBuilder.ApplyConfiguration(new VooConfiguration());
+        modelBuilder.ApplyConfiguration(new CancelamentoConfiguration());
+        modelBuilder.ApplyConfiguration(new ManutencaoConfiguration());
     }
 }

@@ -1,6 +1,6 @@
 namespace AirlinesControl.Entities.Enums;
 
-public enum MaintenanceType
+public enum TipoManutencao
 {
     Preventiva,
     Corretiva
