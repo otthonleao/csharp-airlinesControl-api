@@ -1,4 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 using AirlinesControl.Contexts;
+using AirlinesControl.Middlewares;
 using AirlinesControl.Services;
 using AirlinesControl.Validators.Aeronave;
 
@@ -30,5 +32,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<ValidationExceptionHandlerMiddleware>();
 
 app.Run();
