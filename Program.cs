@@ -1,5 +1,6 @@
 using AirlinesControl.Contexts;
 using AirlinesControl.Services;
+using AirlinesControl.Validators.Aeronave;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddAuthentication(); // Adiciona autenticação e autorização
 builder.Services.AddAuthorization(); // Adiciona os serviços de autorização
 builder.Services.AddDbContext<AirlinesControlContext>();
 builder.Services.AddTransient<AeronaveService>();
+builder.Services.AddTransient<AdicionarAeronaveValidator>();
+builder.Services.AddTransient<AtualizarAeronaveValidator>();
+builder.Services.AddTransient<ExcluirAeronaveValidator>();
 
 var app = builder.Build();
 

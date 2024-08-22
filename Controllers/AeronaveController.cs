@@ -1,6 +1,5 @@
 using AirlinesControl.Services;
-using AirlinesControl.ViewModels.Aircraft;
-using Microsoft.AspNetCore.Http.HttpResults;
+using AirlinesControl.ViewModels.Aeronave;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AirlinesControl.Controllers;

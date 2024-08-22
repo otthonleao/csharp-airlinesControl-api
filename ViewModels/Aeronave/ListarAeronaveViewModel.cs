@@ -1,4 +1,4 @@
-namespace AirlinesControl.ViewModels.Aircraft
+namespace AirlinesControl.ViewModels.Aeronave
 {
     public class ListarAeronaveViewModel
     {
