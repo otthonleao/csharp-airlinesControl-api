@@ -3,6 +3,7 @@ using AirlinesControl.Middlewares;
 using AirlinesControl.Services;
 using AirlinesControl.Validators.Aeronave;
 using AirlinesControl.Validators.Cancelamento;
+using AirlinesControl.Validators.Manutencao;
 using AirlinesControl.Validators.Piloto;
 using AirlinesControl.Validators.Voo;
 using DinkToPdf;
@@ -30,6 +31,10 @@ builder.Services.AddTransient<AdicionarVooValidator>();
 builder.Services.AddTransient<AtualizarVooValidator>();
 builder.Services.AddTransient<ExcluirVooValidator>();
 builder.Services.AddTransient<CancelarVooValidator>();
+builder.Services.AddTransient<ManutencaoService>();
+builder.Services.AddTransient<AdicionarManutencaoValidator>();
+builder.Services.AddTransient<AtualizarManutencaoValidator>();
+builder.Services.AddTransient<ExcluirManutencaoValidator>();
 
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools())); // Orienta o .NET de como deve ser feito a injeção de dependência
 
