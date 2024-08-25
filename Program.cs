@@ -2,7 +2,9 @@ using AirlinesControl.Contexts;
 using AirlinesControl.Middlewares;
 using AirlinesControl.Services;
 using AirlinesControl.Validators.Aeronave;
+using AirlinesControl.Validators.Cancelamento;
 using AirlinesControl.Validators.Piloto;
+using AirlinesControl.Validators.Voo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,13 +16,18 @@ builder.Services.AddAuthentication(); // Adiciona autenticação e autorização
 builder.Services.AddAuthorization(); // Adiciona os serviços de autorização
 builder.Services.AddDbContext<AirlinesControlContext>();
 builder.Services.AddTransient<AeronaveService>();
-builder.Services.AddTransient<PilotoService>();
 builder.Services.AddTransient<AdicionarAeronaveValidator>();
 builder.Services.AddTransient<AtualizarAeronaveValidator>();
 builder.Services.AddTransient<ExcluirAeronaveValidator>();
+builder.Services.AddTransient<PilotoService>();
 builder.Services.AddTransient<AdicionarPilotoValidator>();
 builder.Services.AddTransient<AtualizarPilotoValidator>();
 builder.Services.AddTransient<ExcluirPilotoValidator>();
+builder.Services.AddTransient<VooService>();
+builder.Services.AddTransient<AdicionarVooValidator>();
+builder.Services.AddTransient<AtualizarVooValidator>();
+builder.Services.AddTransient<ExcluirVooValidator>();
+builder.Services.AddTransient<CancelarVooValidator>();
 
 var app = builder.Build();
 
